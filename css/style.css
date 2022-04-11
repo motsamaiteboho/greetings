@@ -1,0 +1,62 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 150%;
+	background-color: chartreuse;
+}
+
+.container {
+	display: flex;
+	flex-flow: column wrap;
+}
+.container > * {
+	padding: 10px;
+	flex: 1 100%;
+  }
+
+.greet {
+	text-align: center;
+	font-size: 2em;
+	font-style: italic;
+}
+input[type=text]{ 
+	width: 60%;
+	padding: 12px 20px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+.name{
+	background-color: coral;
+	padding-left:3%;
+}
+.name .count {
+	font-size:4em;
+	 margin-left: 2%;
+	 color: aqua;
+}
+.languageTypes {
+	background-color: burlywood;
+}
+.languageTypes label{
+	margin: 3%;
+}
+
+.languageTypes button {
+	background-color : aqua;
+	display:block;
+	padding: 10px;
+	font-size: 20px;
+	margin-left: 55%;
+	margin-top:3%;
+	width: 10em;
+}
+.greet{
+	background-color: blueviolet;
+}
+
+.greetme{
+	background-color:brown;
+	padding-left: 10%;
+}
+
+

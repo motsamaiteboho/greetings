@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Home</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="greet">
+            Greeting
+        </div>
+        <div class="name">
+            <label for="fname">Name </label>
+            <input type="text" name="" value="fname" onfocus="this.value=''"placeholder="enter your name" class="fname">
+            <span class="count">0</span>
+        </div>
+       
+        <div class ="languageTypes">
+            <label class="">
+                <input type="radio" name="language" class="languageTypeRadio" value="english">
+                <span class="label-body">English</span>
+            </label>
+            <label class="">
+                <input type="radio" name="language" class="languageTypeRadio" value="afrikaans">
+                <span class="label-body">Afrikaans</span>
+            </label>
+            <label class="">
+                <input type="radio" name="language" class="languageTypeRadio" value="isiXhosa">
+                <span class="label-body">isiXhosa</span>
+            </label>
+            <button class="button-primary greetMeBtn" type="button" name="button">Greet Me</button>
+        </div>
+        <div class="greetme">
+            <span class="greeting">...</span>
+        </div>
+    </div>
+    <script src="js/greet.js"></script>
+</body>
+
+</html>
