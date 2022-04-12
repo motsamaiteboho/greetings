@@ -7,6 +7,7 @@ const greetingsElem = document.querySelector(".count")
 const greetinalangElem = document.querySelector(".greeting")
 
 var greetings = GreetingTheUSer();
+greetingsElem.innerHTML = greetings.greetingCounter();
 function GreetingUser(){
     if (fname.value !== "")
         greetings.setName(fname.value);
