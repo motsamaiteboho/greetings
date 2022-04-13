@@ -3,8 +3,8 @@ function GreetingTheUSer() {
     var thegreetingsCounter = 0;
     var theuserName = " ";
     var thelanguageType;
-    localStorage['greeted'] = 0;
-    localStorage['namesGreeted'] = "";
+    //localStorage['greeted'] = 0;
+    //localStorage['namesGreeted'] = "";
     if (localStorage['namesGreeted']) {
         thenamesGreeted = localStorage['namesGreeted'];
     }
