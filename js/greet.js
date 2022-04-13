@@ -4,7 +4,7 @@ function GreetingTheUSer() {
     var theuserName = " ";
     var thelanguageType;
     //localStorage['greeted'] = 0;
-    //localStorage['namesGreeted'] = " ";
+    //localStorage['namesGreeted'] = "";
     if (localStorage['namesGreeted']) {
         thenamesGreeted = localStorage['namesGreeted'];
     }
