@@ -1,7 +1,8 @@
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 150%;
-	background-color: rgb(255, 0, 76);
+	background-color: #e9d8a6;
+	color:#001219
 }
 
 .container {
@@ -19,23 +20,34 @@ body {
 	font-style: italic;
 }
 input[type=text]{ 
-	width: 60%;
+	width: 75%;
+	display: inline-block;
 	padding: 12px 20px;
 	border: 1px solid #ccc;
 	border-radius: 4px;
 	box-sizing: border-box;
+	background-color: #e9d8a6;
 }
 .name{
-	background-color: coral;
-	padding-left:3%;
+	display: flex;
+	background-color: #005f73;
+	padding-left:5%;
+}
+.name div{
+	flex: 2;
 }
 .name .count {
 	font-size:4em;
 	 margin-left: 2%;
 	 color: aqua;
 }
+.txtbxName {
+	padding: 1.3em;
+}
 .languageTypes {
-	background-color: burlywood;
+	background-color: #0a9396;
+	display: flex;
+	flex-flow: column;
 }
 .languageTypes label{
 	margin: 3%;
@@ -43,20 +55,38 @@ input[type=text]{
 
 .languageTypes button {
 	background-color : aqua;
-	display:block;
 	padding: 10px;
 	font-size: 20px;
-	margin-left: 55%;
 	margin-top:3%;
 	width: 10em;
 }
+.buttons {
+	justify-content: center;
+	margin: auto;
+}
 .greet{
-	background-color: blueviolet;
+	background-color: #94d2bd;
 }
 
 .greetme{
-	background-color:brown;
+	background-color: #94d2bd;
 	padding-left: 10%;
 }
 
+@media (max-width: 750px){
+
+	.txtbxName {
+		padding: 0.5em;
+	}
+	.buttons button{
+		display: block;
+	}
+	input[type=text]{ 
+		width: 100%;
+		display: block;
+	}
+	.greetme{
+		text-align: center;
+	}
+}
 

@@ -15,25 +15,36 @@
             Greeting
         </div>
         <div class="name">
-            <label for="fname">Name </label>
-            <input type="text" name="" value="" placeholder="enter your name" class="fname">
-            <span class="count">0</span>
+            <div class="txtbxName">
+                <label for="fname">Name </label>
+                <input type="text" name="" value="" placeholder="enter your name" class="fname">
+            </div>
+            <div>
+                <span class="count">0</span>
+            </div>
+            
         </div>
        
         <div class ="languageTypes">
-            <label class="">
-                <input type="radio" name="language" class="languageTypeRadio" value="english">
-                <span class="label-body">English</span>
-            </label>
-            <label class="">
-                <input type="radio" name="language" class="languageTypeRadio" value="afrikaans">
-                <span class="label-body">Afrikaans</span>
-            </label>
-            <label class="">
-                <input type="radio" name="language" class="languageTypeRadio" value="isiXhosa">
-                <span class="label-body">isiXhosa</span>
-            </label>
-            <button class="button-primary greetMeBtn" type="button" name="button">Greet Me</button>
+            <div>
+                <label class="">
+                    <input type="radio" name="language" class="languageTypeRadio" value="english">
+                    <span class="label-body">English</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="language" class="languageTypeRadio" value="afrikaans">
+                    <span class="label-body">Afrikaans</span>
+                </label>
+                <label class="">
+                    <input type="radio" name="language" class="languageTypeRadio" value="isiXhosa">
+                    <span class="label-body">isiXhosa</span>
+                </label>
+            </div>
+            <div class="buttons">
+                <button class="button-primary greetMeBtn" type="button" name="button">Greet Me</button>
+                <button class="button-primary resetCouBtn" type="button" name="button">Reset Counter</button>
+            </div>
+           
         </div>
         <div class="greetme">
             <span class="greeting">...</span>
