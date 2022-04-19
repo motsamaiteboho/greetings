@@ -1,81 +1,58 @@
 function GreetingTheUSer() {
-    var thenamesGreeted = " ";
+    var thenamesGreeted = "";
     var thegreetingsCounter = 0;
     var theuserName = "";
     var thelanguageType = "";
-
-    if (localStorage['namesGreeted']) {
-        thenamesGreeted = localStorage['namesGreeted'];
-        thegreetingsCounter = (thenamesGreeted.split(',').length - 1);
-    }
-
-    function setName(userName) {
-        if (!userName.match(/^[^a-zA]+$/)) {
-            theuserName = userName;
-            if (!thenamesGreeted.includes(theuserName.toLowerCase())) {
+    function IncrementCounter(userName){
+         theuserName = userName;
+         if (!thenamesGreeted.includes(theuserName.toLowerCase())) {
                 thegreetingsCounter++;
                 //add an entry for the user that was greeted in the Object Map
                 thenamesGreeted = thenamesGreeted.concat(theuserName.toLowerCase() + ", ");
-                //update the DOM to display the counter
-                localStorage.setItem('namesGreeted', thenamesGreeted);
-            }
-        }
-        else {
-            alert("enter a valid name")
         }
     }
-    function setLangage(language) {
-        thelanguageType = language;
+    function greetingNames(){
+        return thenamesGreeted;
     }
-    function getName() {
-        return theuserName;
-    }
-    function geLanguage() {
-        return thelanguageType;
-    }
-
     function greetingCounter() {
         return thegreetingsCounter;
     }
     function resetCounter() {
-        localStorage['namesGreeted'] = "";
         thenamesGreeted = "";
         thegreetingsCounter = 0;
     }
-    function greetUser() {
-
+    function greetUser(language) {
+        thelanguageType = language;
         if (thelanguageType == "english") {
-            if (getName() != "")
-                return "Hello, " + getName();
+            if (theuserName != "")
+                return "Hello, " + theuserName;
             else {
-                alert("Please, enter your name first")
-                return "..."
+           
+                return "Please, enter your name";
             }
         }
         else if (thelanguageType == "afrikaans") {
-            if (getName() != "")
-                return "Hallo, " + getName();
+            if (theuserName != "")
+                return "Hallo, " +theuserName;
             else {
-                alert("Please, enter your name first")
-                return "..."
+            
+                return "Please, enter your name"
             }
         }
         else if (thelanguageType == "isiXhosa") {
-            if (getName() != "")
-                return "Mholweni, " + getName();
+            if (theuserName != "")
+                return "Mholweni, " + theuserName;
             else {
-                alert("Please, enter your name first")
-                return "..."
+                
+                return "Please, enter your name"
             }
         }
     }
     return {
-        setName,
-        setLangage,
-        getName,
-        geLanguage,
+        IncrementCounter,
         greetingCounter,
         greetUser,
-        resetCounter
+        resetCounter,
+        greetingNames
     }
 }
