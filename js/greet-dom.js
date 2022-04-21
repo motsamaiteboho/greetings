@@ -10,32 +10,50 @@ const greetinalangElem = document.querySelector(".greeting")
 var greetings = GreetingTheUSer();
 
 if (localStorage['namesGreeted']) {
-    var count = (localStorage['namesGreeted'].split(',').length - 1)
-    greetingsElem.innerHTML = count;
+    var thegreetedNames = JSON.parse(localStorage.getItem('namesGreeted'))
+    for (var i = 0; i < thegreetedNames.length; i++) {
+        greetings.storeNames(thegreetedNames[i]);
+    }
+    greetingsElem.innerHTML = greetings.greetingCounter();
 }
 
-function GreetingUser(){
-    
-    // get a reference to the language radi buttons
+function GreetingUser() {
+    greetingsElem.innerHTML = greetings.greetingCounter();
     var checkedRadioBtn = document.querySelector("input[name='language']:checked");
-    if (checkedRadioBtn)
-    {
-        if (!fname.value.match(/^[^a-zA]+$/) && fname.value !== "")
-            greetings.IncrementCounter(fname.value);
-        localStorage['namesGreeted'] = greetings.greetingNames();
-        greetingsElem.innerHTML = greetings.greetingCounter();
-        greetinalangElem.innerHTML =  greetings.greetUser(checkedRadioBtn.value);
+    if (fname.value !== "") {
+        if (checkedRadioBtn) {
+            if (!fname.value.match(/^[^a-zA]+$/))
+            {
+                greetings.storeNames(fname.value);
+                localStorage.setItem('namesGreeted', JSON.stringify(greetings.greetingNames()));
+                greetinalangElem.innerHTML = greetings.greetUser(checkedRadioBtn.value);
+            }
+            fname.value = "";
+        }
+        else {
+           
+            greetinalangElem.innerHTML = "Please, select your prefered language";
+            setTimeout(function(){
+                greetinalangElem.innerHTML  = "...";
+              },3000);
+        }
     }
-    else
-    {
-        greetinalangElem.innerHTML = "Please, select your prefered language";
+    else {
+        setTimeout(function(){
+            greetinalangElem.innerHTML  = "...";
+          },3000);
+        greetinalangElem.innerHTML = "Please, enter your name";
+        
     }
-}
-greetMeBtn.addEventListener('click',GreetingUser);
+    // get a reference to the language radi buttons
 
-function resetCounter(){
+    greetingsElem.innerHTML = greetings.greetingCounter();
+}
+greetMeBtn.addEventListener('click', GreetingUser);
+
+function resetCounter() {
     localStorage['namesGreeted'] = "";
     greetings.resetCounter();
     greetingsElem.innerHTML = greetings.greetingCounter();
 }
-resetCouBtn.addEventListener('click',resetCounter);
+resetCouBtn.addEventListener('click', resetCounter);

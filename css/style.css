@@ -31,7 +31,7 @@ input[type=text]{
 .name{
 	display: flex;
 	background-color: #005f73;
-	padding-left:20%;
+	padding-left:30%;
 }
 .name div{
 	flex: 2;

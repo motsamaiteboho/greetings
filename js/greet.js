@@ -1,15 +1,16 @@
 function GreetingTheUSer() {
-    var thenamesGreeted = "";
+    var thenamesGreeted = [];
     var thegreetingsCounter = 0;
     var theuserName = "";
     var thelanguageType = "";
-    function IncrementCounter(userName){
+    function storeNames(userName){
          theuserName = userName;
-         if (!thenamesGreeted.includes(theuserName.toLowerCase())) {
-                thegreetingsCounter++;
-                //add an entry for the user that was greeted in the Object Map
-                thenamesGreeted = thenamesGreeted.concat(theuserName.toLowerCase() + ", ");
-        }
+         if (!thenamesGreeted.includes(theuserName.toLowerCase()))
+         {
+            //add an entry for the user that was greeted in the Object Map
+            thenamesGreeted.push(theuserName.toLowerCase());
+            thegreetingsCounter++;
+         }
     }
     function greetingNames(){
         return thenamesGreeted;
@@ -26,30 +27,18 @@ function GreetingTheUSer() {
         if (thelanguageType == "english") {
             if (theuserName != "")
                 return "Hello, " + theuserName;
-            else {
-           
-                return "Please, enter your name";
-            }
         }
         else if (thelanguageType == "afrikaans") {
             if (theuserName != "")
                 return "Hallo, " +theuserName;
-            else {
-            
-                return "Please, enter your name"
-            }
         }
         else if (thelanguageType == "isiXhosa") {
             if (theuserName != "")
                 return "Mholweni, " + theuserName;
-            else {
-                
-                return "Please, enter your name"
-            }
         }
     }
     return {
-        IncrementCounter,
+        storeNames,
         greetingCounter,
         greetUser,
         resetCounter,
